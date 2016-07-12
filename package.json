@@ -1,0 +1,26 @@
+{
+  "name": "jsonmatter",
+  "version": "1.0.0",
+  "description": "JSON formatter tool",
+  "main": "index.js",
+  "bin": {
+    "jsonmatter": "./bin/jsonmatter"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hotoo/jsonmatter.git"
+  },
+  "keywords": [
+    "JSON",
+    "formatter"
+  ],
+  "author": "闲耘 <hotoo.cn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hotoo/jsonmatter/issues"
+  },
+  "homepage": "https://github.com/hotoo/jsonmatter"
+}
