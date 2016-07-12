@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/hotoo/jsonmatter/issues"
   },
-  "homepage": "https://github.com/hotoo/jsonmatter"
+  "homepage": "https://github.com/hotoo/jsonmatter",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }

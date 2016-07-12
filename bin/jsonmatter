@@ -2,9 +2,17 @@
 
 'use strict';
 
-process.stdin.setEncoding('utf8');
+var program = require('commander');
 
+program
+  .version(require('../package.json').version)
+  .option('-i, --indent <indent>', 'set format indent string')
+  .parse(process.argv);
+
+var indent = parseInt(program.indent || 2, 10);
 var jsonString = '';
+
+process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', () => {
   var chunk = process.stdin.read();
@@ -16,7 +24,7 @@ process.stdin.on('readable', () => {
 process.stdin.on('end', () => {
   try {
     const json = JSON.parse(jsonString);
-    process.stdout.write(JSON.stringify(json, null, 2));
+    process.stdout.write(JSON.stringify(json, null, indent));
   } catch (ex) {
     process.stdout.write(jsonString);
   }
