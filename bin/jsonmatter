@@ -24,7 +24,7 @@ process.stdin.on('readable', () => {
 process.stdin.on('end', () => {
   try {
     const json = JSON.parse(jsonString);
-    process.stdout.write(JSON.stringify(json, null, indent));
+    process.stdout.write(JSON.stringify(json, null, indent) + '\n');
   } catch (ex) {
     process.stdout.write(jsonString);
   }
