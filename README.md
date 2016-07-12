@@ -11,7 +11,7 @@ $ npm install jsonmatter -g
 ## USAGE
 
 ```bash
-$ cat tmp.json | jsonmatter --indent "  "
+$ cat tmp.json | jsonmatter --indent 4
 ```
 
 for Vim:
