@@ -22,6 +22,6 @@ autocmd BufNewFile,BufRead *.json setlocal formatprg=jsonmatter
 
 ## OPTIONS
 
-### -i, --indent <indent string>
+### -i, --indent <indent space count>
 
-set indent by `"  "` for `"\t"` or what you want.
+default indent is `2` spaces.
