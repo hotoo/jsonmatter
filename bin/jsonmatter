@@ -2,30 +2,27 @@
 
 'use strict';
 
-var program = require('commander');
+const program = require('commander');
+const tokenizer = require('json-tokenizer');
+const jsonmater = require('../');
 
 program
   .version(require('../package.json').version)
   .option('-i, --indent <indent>', 'set format indent string')
   .parse(process.argv);
 
-var indent = parseInt(program.indent || 2, 10);
-var jsonString = '';
+const RE_NUMBER = /^\d+$/;
+const RE_INDENT = /^[ \t]+$/;
+let indent = '  ';
 
-process.stdin.setEncoding('utf8');
+if (RE_NUMBER.test(program.indent)) {
+  const indent_size = parseInt(program.indent || 2, 10);
+  indent = ' '.repeat(indent_size);
+} else if (RE_INDENT.test(program.indent)) {
+  indent = program.indent;
+}
 
-process.stdin.on('readable', () => {
-  var chunk = process.stdin.read();
-  if (chunk !== null) {
-    jsonString += chunk;
-  }
-});
-
-process.stdin.on('end', () => {
-  try {
-    const json = JSON.parse(jsonString);
-    process.stdout.write(JSON.stringify(json, null, indent) + '\n');
-  } catch (ex) {
-    process.stdout.write(jsonString);
-  }
-});
+process.stdin
+  .pipe(tokenizer())
+  .pipe(jsonmater(indent))
+  .pipe(process.stdout);

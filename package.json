@@ -7,7 +7,7 @@
     "jsonmatter": "./bin/jsonmatter"
   },
   "scripts": {
-    "test": "echo 'No test file' && exit 1"
+    "test": "istanbul cover _mocha -- --harmony --reporter spec --timeout 2000 --inline-diffs ./test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,14 @@
   },
   "homepage": "https://github.com/hotoo/jsonmatter",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "json-tokenizer": "^1.0.1",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "should": "^11.1.0"
   }
 }
