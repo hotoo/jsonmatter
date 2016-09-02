@@ -4,7 +4,7 @@
 
 const program = require('commander');
 const tokenizer = require('json-tokenizer');
-const jsonmater = require('../');
+const jsonmatter = require('../');
 
 program
   .version(require('../package.json').version)
@@ -24,5 +24,5 @@ if (RE_NUMBER.test(program.indent)) {
 
 process.stdin
   .pipe(tokenizer())
-  .pipe(jsonmater(indent))
+  .pipe(jsonmatter(indent))
   .pipe(process.stdout);
