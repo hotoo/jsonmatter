@@ -10,18 +10,37 @@ $ npm install jsonmatter -g
 
 ## USAGE
 
+Node:
+
+```js
+const tokenizer = require('json-tokenizer');
+
+fs.createReadStream(path.resolve(__dirname, './source.json'))
+  .pipe(tokenizer())
+  .pipe(jsonmater(indent))
+  .pipe(process.stdout);
+```
+
+cli:
+
 ```bash
 $ cat tmp.json | jsonmatter --indent 4
 ```
 
-for Vim:
+Vim:
 
 ```vim
-autocmd BufNewFile,BufRead *.json setlocal formatprg=jsonmatter
+autocmd FileType json setlocal formatprg=jsonmatter
+```
+
+```vim
+:help gq
+:help formatprg
+:help formatexpr
 ```
 
 ## OPTIONS
 
 ### -i, --indent <indent space count>
 
-default indent is `2` spaces.
+default indent is `2` spaces, you can also use `'    '` or `'\t'`.
