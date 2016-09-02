@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.1.0 (2016-09-02)
+
+- feat(empty): better format for empty object and empty array.
+
 ## 2.0.0 (2016-09-02)
 
 - feat(stream): json parse and format by stream.
