@@ -1,6 +1,17 @@
 # README
 
-jsonmatter is a JSON formatter tool.
+[![NPM version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+[![Coverage Status][coveralls-badge]][coveralls-url]
+
+[npm-badge]: https://img.shields.io/npm/v/jsonmatter.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/jsonmatter
+[travis-badge]: https://travis-ci.org/hotoo/jsonmatter.svg?branch=master
+[travis-url]: https://travis-ci.org/hotoo/jsonmatter
+[coveralls-badge]: https://coveralls.io/repos/hotoo/jsonmatter/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/r/hotoo/jsonmatter
+
+jsonmatter is a JSON formatter tool by stream.
 
 ## INSTALL
 
@@ -14,10 +25,13 @@ Node:
 
 ```js
 const tokenizer = require('json-tokenizer');
+const jsonmatter = require('jsonmatter');
+
+const indent = '\t';
 
 fs.createReadStream(path.resolve(__dirname, './source.json'))
   .pipe(tokenizer())
-  .pipe(jsonmater(indent))
+  .pipe(jsonmatter(indent))
   .pipe(process.stdout);
 ```
 
