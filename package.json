@@ -1,6 +1,6 @@
 {
   "name": "jsonmatter",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "JSON formatter tool by stream",
   "main": "index.js",
   "bin": {
@@ -15,7 +15,9 @@
   },
   "keywords": [
     "JSON",
-    "formatter"
+    "format",
+    "formatter",
+    "stream"
   ],
   "author": "闲耘 <hotoo.cn@gmail.com>",
   "license": "MIT",
